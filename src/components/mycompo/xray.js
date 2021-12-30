@@ -107,6 +107,16 @@ class xray extends Component {
               <option value="VGG19">VGG19</option>
               <option value="Resnet">Resnet</option>
               <option value="Nasnet">Nasnet</option>
+
+              <option value="Nasnet">EfficientV2</option>
+              <option value="Nasnet">Densenet121</option>
+              <option value="Nasnet">MobileNetV2</option>
+              <option value="Nasnet">Xception</option>
+              <option value="Nasnet">VGG16+RF</option>
+              <option value="Nasnet">Unet(DWT, GLCM)</option>
+              <option value="Nasnet">SwimTrans</option>
+              <option value="Nasnet">InceptionResnetV2</option>
+              <option value="Nasnet">CustomModel</option>
             </select>
           </label>
           <br />

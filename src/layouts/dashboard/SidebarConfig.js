@@ -48,6 +48,16 @@ const sidebarConfig = [
     icon: getIcon(shoppingBagFill)
   },
   {
+    title: 'JNUpload',
+    path: '/dashboard/jnupload',
+    icon: getIcon(shoppingBagFill)
+  },
+  {
+    title: 'Automater',
+    path: '/dashboard/automater',
+    icon: getIcon(shoppingBagFill)
+  },
+  {
     title: '--------------------------',
     path: '',
     icon: ''

@@ -28,6 +28,9 @@ import axios from '../../services/Axios';
 
 import { readRemoteFile } from 'react-papaparse';
 
+import Lottie from 'react-lottie';
+import animationData from '../../lotties/86553-automate.json';
+
 import {
   TableContainer,
   Table,
@@ -96,6 +99,14 @@ const useStyles = makeStyles((theme) => ({
   tableRowStyle2: { height: '2px', padding: '0px' }
 }));
 
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: animationData,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice'
+  }
+};
 // components
 
 function Copyright(props) {
@@ -218,7 +229,9 @@ class sym extends Component {
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
-
+          <div>
+            <Lottie options={defaultOptions} height={250} width={250} />
+          </div>
           <div>
             <Button
               type="submit"

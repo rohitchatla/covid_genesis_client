@@ -84,7 +84,9 @@ class xray extends Component {
       <>
         <div>
           {/* <h2>Hi</h2> */}
-          <h2 className="mb-5">Upload Lungs X Ray(~ Hybrid Custom Model(VGG16++))</h2>
+          <h2 className="mb-5">
+            Upload Lungs X Ray(~ Hybrid Custom Model[covidGenesisNet](VGG16++))
+          </h2>
           {/* <form onSubmit={this.handleSubmit()}> */}
           <br />
           <br />

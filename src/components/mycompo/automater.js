@@ -192,14 +192,22 @@ class sym extends Component {
       });
   };
 
-  /*
+  /*(old)
   1-> Model 1(sarima-multi) train
   2-> Model 2(sarima-multi-sscore) train
   3-> Model 1 predict
   4-> Model 2 predict
   */
 
+  /*(new)
+  1-> Model 1(sarima-multi-with-sscore) train+predict
+  2-> Model 2(sarima-multi) train+predict
+  3-> Model 3(sarima-uni) train+predict
+  4-> Model 4(tes) train+predict
+  */
+
   train_ts = (val) => {
+    //train+predict(4models)
     axios
       .post(`/train_ts`, { val }) // axios returns a promise
       .then((response) => {
@@ -211,17 +219,17 @@ class sym extends Component {
       });
   };
 
-  predict_ts = (val) => {
-    axios
-      .post(`/train_ts`, { val }) // axios returns a promise
-      .then((response) => {
-        console.log(response.data);
-        alert(JSON.stringify(response.data));
-      })
-      .catch(({ response }) => {
-        console.log(response);
-      });
-  };
+  // predict_ts = (val) => {
+  //   axios
+  //     .post(`/predict_ts`, { val }) // axios returns a promise
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       alert(JSON.stringify(response.data));
+  //     })
+  //     .catch(({ response }) => {
+  //       console.log(response);
+  //     });
+  // };
 
   render() {
     const theme = createTheme();
@@ -259,9 +267,9 @@ class sym extends Component {
               sx={{ mt: 3, mb: 2 }}
               onClick={() => this.train_ts(1)}
             >
-              Train Model 1
+              Train+Forecast Model 1[Sarimax MultiVariant with sscore]
             </Button>
-            <Button
+            {/* <Button
               type="submit"
               fullWidth
               variant="contained"
@@ -269,7 +277,7 @@ class sym extends Component {
               onClick={() => this.predict_ts(3)}
             >
               Predict Model 1
-            </Button>
+            </Button> */}
 
             <Button
               type="submit"
@@ -278,9 +286,9 @@ class sym extends Component {
               sx={{ mt: 3, mb: 2 }}
               onClick={() => this.train_ts(2)}
             >
-              Train Model 2
+              Train+Forecast Model 2[Sarimax MultiVariant]
             </Button>
-            <Button
+            {/* <Button
               type="submit"
               fullWidth
               variant="contained"
@@ -288,6 +296,24 @@ class sym extends Component {
               onClick={() => this.predict_ts(4)}
             >
               Predict Model 2
+            </Button> */}
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+              onClick={() => this.train_ts(3)}
+            >
+              Train+Forecast Model 3[Sarimax UniVariant]
+            </Button>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+              onClick={() => this.train_ts(4)}
+            >
+              Train+Forecast Model 4[TES]
             </Button>
           </div>
 

@@ -63,7 +63,7 @@ const sidebarConfig = [
     icon: ''
   },
   {
-    title: 'Xray prediction(VGG16)',
+    title: 'Xray prediction([covidGenesisNet](VGG16++))',
     path: '/dashboard/xray',
     icon: getIcon(shoppingBagFill)
   },

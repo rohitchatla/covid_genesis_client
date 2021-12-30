@@ -737,7 +737,7 @@ class sym extends Component {
                 Predict
               </Button>
               <div>
-                <h2>Train on Custom Dataset</h2>
+                <h2>Train on Custom Model/Dataset</h2>
                 <input
                   type="file"
                   id="inputGroupFile01"
@@ -758,7 +758,7 @@ class sym extends Component {
                 </button>
                 <br />
                 <br />
-                <h2>Predict on Custom File</h2>
+                <h2>Predict on Custom Model/File</h2>
                 <input
                   type="file"
                   id="inputGroupFile01"
